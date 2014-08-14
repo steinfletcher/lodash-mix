@@ -1,5 +1,5 @@
 {
-  "name": "lodash-mixins",
+  "name": "lodash-mixin",
   "version": "0.0.1",
   "description": "Lodash mixins",
   "main": "index.js",
