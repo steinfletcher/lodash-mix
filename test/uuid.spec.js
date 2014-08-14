@@ -1,4 +1,4 @@
-var _ = require('../../lodash-mixins.js'),
+var _ = require('../index.js'),
     test = require('tape');
 
 test('uuid: should generate a string of 36 chars', function (t) {

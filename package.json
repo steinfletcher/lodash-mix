@@ -1,7 +1,7 @@
 {
-  "name": "lodash-extensions",
-  "version": "0.0.0",
-  "description": "Extensions to the lodash library",
+  "name": "lodash-mixins",
+  "version": "0.0.1",
+  "description": "Lodash mixins",
   "main": "index.js",
   "scripts": {
     "test": "./test-runner.bash"

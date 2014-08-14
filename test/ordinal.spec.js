@@ -1,4 +1,4 @@
-var _ = require('../../lodash-mixins.js'),
+var _ = require('../index.js'),
     test = require('tape');
 
 test('ordinal: should return the ordinal of a given number', function (t) {

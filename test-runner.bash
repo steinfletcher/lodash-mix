@@ -7,10 +7,10 @@
 BROWSER_CMD=firefox
 
 # node tests
-tape test/spec/*.spec.js | faucet
+tape test/*.spec.js | faucet
 
 # browser tests
 mkdir -p .tmp/
-browserify test/spec/*.spec.js > .tmp/bundle.js
+browserify test/*.spec.js > .tmp/bundle.js
 echo '<script src="bundle.js"></script>' > .tmp/test.html
 ${BROWSER_CMD} .tmp/test.html
