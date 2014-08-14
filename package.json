@@ -8,6 +8,10 @@
   },
   "author": "Stein Fletcher",
   "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/steinfletcher/lodash-mix"
+  },
   "dependencies": {
     "lodash": "^2.4.1"
   },
@@ -15,3 +19,4 @@
     "tape": "^2.14.0"
   }
 }
+
