@@ -1,0 +1,17 @@
+{
+  "name": "lodash-extensions",
+  "version": "0.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "./test-runner.bash"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "lodash": "^2.4.1"
+  },
+  "devDependencies": {
+    "tape": "^2.14.0"
+  }
+}
