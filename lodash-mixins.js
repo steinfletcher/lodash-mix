@@ -65,6 +65,7 @@
 
         /**
          * _.ordinal
+         *
          * Usage:
          *    _.ordinal(142)
          * Produces:
@@ -90,6 +91,27 @@
                 default:
                     return 'th';
             }
+        };
+
+        /**
+         * _.uuid
+         *
+         * Usage:
+         *    _.uuid()
+         * Produces:
+         *    '9716498c-45df-47d2-8099-3f678446d776'
+         *
+         * Generates an RFC 4122 version 4 uuid
+         * @returns {String} the generated uuid
+         */
+        extendWith.uuid = function() {
+            return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'
+                .replace(/[xy]/g, function(match) {
+                    var value = match === 'x'
+                                ? _.random(0, 15)
+                                : _.random(8, 11);
+                    return value.toString(16);
+            });
         };
 
         return extendWith;

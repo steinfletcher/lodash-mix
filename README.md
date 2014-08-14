@@ -4,6 +4,12 @@ Some [lodash mixins](http://lodash.com/docs#mixin) for node and the browser.
 
 # mixins
 
+## _.uuid
+```javascript
+_.uuid()
+// produces a version 4 uuid in the form 2f6a8369-1897-48f1-afb8-6b3056bc72af
+```
+
 ## _.format
 ```javascript
 _.format('Other {} are {}', 'people', 'good plumbers')
