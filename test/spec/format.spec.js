@@ -1,4 +1,4 @@
-var _ = require('../../lodash-extensions.js'),
+var _ = require('../../lodash-mixins.js'),
     test = require('tape');
 
 test('format: should format a string with supplied parameters', function (t) {

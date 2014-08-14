@@ -1,4 +1,4 @@
-var _ = require('../../lodash-extensions.js'),
+var _ = require('../../lodash-mixins.js'),
     test = require('tape');
 
 var src = {a: 1, b: 2},
