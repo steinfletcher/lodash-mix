@@ -43,11 +43,11 @@
         };
 
         /**
-         * _.formatUrl
+         * _.formatPath
          *
-         * Formats a url with given parameters.
+         * Formats a path/url with given parameters.
          * Usage:
-         *    _.formatUrl('/:categ/:id', {categ: 'books', isbn: '034038204X'})
+         *    _.formatPath('/:categ/:id', {categ: 'books', isbn: '034038204X'})
          * Produces:
          *    '/categ/books/034038204X'
          *
@@ -55,7 +55,7 @@
          * @param {Object} params - the replacement parameters
          * @returns {String} the formatted url
          */
-        extendWith.formatUrl = function (template, params) {
+        extendWith.formatPath = function (template, params) {
             return template.replace(/:[a-z0-9]+/g, function (a, b) {
                 var paramName = a.slice(1, a.length);
                 var paramVal = params[paramName];

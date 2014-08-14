@@ -11,9 +11,9 @@ _.format('Other {} are {}', 'people', 'good plumbers')
 // produces 'Other people are good plumbers'
 ```
 
-## _.formatUrl
+## _.formatPath
 ```javascript
-_.formatUrl('/categ/:cat/:isbn', {cat: 'books', isbn: '034038204X'})
+_.formatPath('/categ/:cat/:isbn', {cat: 'books', isbn: '034038204X'})
 
 // '/categ/books/034038204X'
 ```
