@@ -3,6 +3,28 @@
         var extendWith = {};
 
         /**
+         * _.immutableMerge
+         *
+         * Merges two objects without mutating the two objects
+         * Usage:
+         *    var src = {a: 1, b: 2};
+         *    var dest = {c: 3, d: 4};
+         *    var merged = _.immutableMerge(src, dest);
+         * Produces:
+         *    src -> { a: 1, b: 2 }
+         *    dest -> { c: 3, d: 4 }
+         *    merged -> { a: 1, b: 2, c: 3, d: 4 }
+         * @param {Object} src - the source object
+         * @param {Object} dest - the destination object
+         * @returns {Object} a new object constructed from properties of src and dest
+         */
+        extendWith.immutableMerge = function (src, dest) {
+            return _.merge(_.cloneDeep(src), dest);
+        };
+
+        /**
+         * _.format
+         *
          * Formats a string with given parameters.
          * Usage:
          *    _.format('Other {} are {}', 'people', 'good plumbers')
@@ -21,6 +43,8 @@
         };
 
         /**
+         * _.formatUrl
+         *
          * Formats a url with given parameters.
          * Usage:
          *    _.formatUrl('/:categ/:id', {categ: 'books', isbn: '034038204X'})
@@ -39,24 +63,6 @@
             });
         };
 
-        /**
-         * Merges two objects without mutating the two objects
-         * Usage:
-         *    var src = {a: 1, b: 2};
-         *    var dest = {c: 3, d: 4};
-         *    var merged = _.immutableMerge(src, dest);
-         * Produces:
-         *    src -> { a: 1, b: 2 }
-         *    dest -> { c: 3, d: 4 }
-         *    merged -> { a: 1, b: 2, c: 3, d: 4 }
-         * @param {Object} src - the source object
-         * @param {Object} dest - the destination object
-         * @returns {Object} a new object constructed from properties of src and dest
-         */
-        extendWith.immutableMerge = function (src, dest) {
-            return _.merge(_.cloneDeep(src), dest);
-        };
-
         return extendWith;
     })();
 
@@ -68,24 +74,22 @@
      *    need to include lodash
      */
 
+    // browser environment
+    var _;
     if (typeof module !== 'undefined' &&
         typeof module.exports !== 'undefined') {
         // node environment
-        var _ = require('lodash');
+        _ = require('lodash');
         _.mixin(mixins);
         module.exports = _;
     }
     else {
-        // browser environment
-        if (typeof _ !== 'undefined') {
+        _ = window._;
+        if (typeof _ === 'function') {
             _.mixin(mixins);
         }
         else {
-            throw {
-                name: 'Error',
-                message: 'lodash must be included before lodash-extensions.'
-            }
+            throw new Error('lodash must be included before lodash-extensions.');
         }
     }
 })();
-
