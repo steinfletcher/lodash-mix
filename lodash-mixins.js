@@ -63,6 +63,35 @@
             });
         };
 
+        /**
+         * _.ordinal
+         * Usage:
+         *    _.ordinal(142)
+         * Produces:
+         *    'nd'
+         *
+         * Returns the English ordinal suffix of a number
+         * @param {Number} number - the number under test
+         * @returns {String} the ordinal suffix
+         */
+        extendWith.ordinal = function (number) {
+            var hundredRem = number % 100,
+                tenRem = number % 10;
+            if (hundredRem - tenRem === 10) {
+                return 'th';
+            }
+            switch(tenRem) {
+                case 1:
+                    return 'st';
+                case 2:
+                    return 'nd';
+                case 3:
+                    return 'rd';
+                default:
+                    return 'th';
+            }
+        };
+
         return extendWith;
     })();
 

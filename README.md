@@ -22,6 +22,13 @@ _.immutableMerge({a: 1}, {b: 2})
 // produces {a:1 , b:2} without mutating the input objects
 ```
 
+## _.ordinal
+```javascript
+_.ordinal(142)
+
+// produces 'nd'
+```
+
 # tests
 
 Tests run in node and the browser. Browserify and tape must be installed globally.
