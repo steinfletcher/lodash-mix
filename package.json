@@ -1,12 +1,12 @@
 {
   "name": "lodash-extensions",
   "version": "0.0.0",
-  "description": "",
+  "description": "Extensions to the lodash library",
   "main": "index.js",
   "scripts": {
     "test": "./test-runner.bash"
   },
-  "author": "",
+  "author": "Stein Fletcher",
   "license": "ISC",
   "dependencies": {
     "lodash": "^2.4.1"
