@@ -25,7 +25,6 @@ _.immutableMerge({a: 1}, {b: 2})
 ## _.ordinal
 ```javascript
 _.ordinal(142)
-
 // produces 'nd'
 ```
 
