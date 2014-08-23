@@ -6,7 +6,7 @@ Some [lodash mixins](http://lodash.com/docs#mixin) I tend to add to my projects.
 
 ## _.format
 ```javascript
-_.format('Other {} are {}', 'people', 'good', 'plumbers')
+_.format('Other {} are {}', 'people', 'good plumbers')
 
 // produces 'Other people are good plumbers'
 ```
