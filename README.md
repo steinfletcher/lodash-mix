@@ -1,6 +1,6 @@
 # lodash-mixins
 
-Some [lodash mixins](http://lodash.com/docs#mixin) I tend to add to my projects.
+Some [lodash mixins](http://lodash.com/docs#mixin) for node and the browser.
 
 # mixins
 
@@ -25,3 +25,12 @@ _.immutableMerge({a: 1}, {b: 2})
 // produces {a:1 , b:2} without mutating the input objects
 ```
 
+# tests
+
+Tests run in node and the browser. Browserify and tape must be installed globally.
+
+Execute from the command line (bash)
+
+```bash
+./test-runner.bash
+```
