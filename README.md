@@ -20,7 +20,7 @@ _.formatUrl('/categ/:cat/:isbn', {cat: 'books', isbn: '034038204X'})
 
 ## _.immutableMerge
 ```javascript
-_.immutableMerge({a: 1}, {b: 2}) -> 
+_.immutableMerge({a: 1}, {b: 2})
 
 // produces {a:1 , b:2} without mutating the input objects
 ```
