@@ -14,6 +14,7 @@
          *    src -> { a: 1, b: 2 }
          *    dest -> { c: 3, d: 4 }
          *    merged -> { a: 1, b: 2, c: 3, d: 4 }
+         *
          * @param {Object} src - the source object
          * @param {Object} dest - the destination object
          * @returns {Object} a new object constructed from properties of src and dest
@@ -112,6 +113,23 @@
                                 : _.random(8, 11);
                     return value.toString(16);
             });
+        };
+
+        /**
+         * _.isUuid
+         *
+         * Usage:
+         *    _.isUuid(_.uuid())
+         * Produces:
+         *    true|false
+         *
+         * Validates a version 4 uuid string
+         * @param {String} uuid - the uuid under test
+         * @returns {Boolean} true if the uuid under test is a valid uuid
+         **/
+        extendWith.isUuid = function(uuid) {
+            var re = /^[0-9a-f]{8}-[0-9a-f]{4}-4[0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$/i;
+            return re.test(uuid);
         };
 
         return extendWith;
