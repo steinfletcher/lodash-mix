@@ -1,6 +1,6 @@
 # lodash-mixins
 
-Some [lodash mixins](http://lodash.com/docs#mixin) for node and the browser.
+Some [lodash mixins](http://lodash.com/docs#mixin) I've collected - for node and the browser.
 
 # mixins
 
