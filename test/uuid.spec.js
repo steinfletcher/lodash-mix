@@ -20,6 +20,12 @@ test('uuid: should generate unique uuids', function (t) {
     t.equal(_.uniq(uuids).length, numUuids);
 });
 
+test('uuid: should generate a valid uuid', function (t) {
+    t.plan(1);
+
+    t.equal(_.isUuid(_.uuid()), true);
+});
+
 test('uuid: should set the 15th char to 4', function (t) {
     var numUuids = 50;
     t.plan(numUuids);
