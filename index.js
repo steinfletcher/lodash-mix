@@ -125,7 +125,6 @@
      *    need to include lodash
      */
 
-    // browser environment
     var _;
     if (typeof module !== 'undefined' &&
         typeof module.exports !== 'undefined') {
@@ -135,6 +134,7 @@
         module.exports = _;
     }
     else {
+        // browser environment
         _ = window._;
         if (typeof _ === 'function') {
             _.mixin(mixins);
