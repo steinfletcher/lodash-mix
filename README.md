@@ -1,4 +1,4 @@
-# lodash-mixins
+# lodash-mix
 
 Some [lodash mixins](http://lodash.com/docs#mixin) I've collected - for node and the browser.
 
