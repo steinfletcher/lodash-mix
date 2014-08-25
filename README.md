@@ -6,12 +6,12 @@ Some [lodash mixins](http://lodash.com/docs#mixin) I've collected - for node and
 
 ```javascript
 _.uuid()
-// produces a version 4 uuid in the form 2f6a8369-1897-48f1-afb8-6b3056bc72af
+// generates an RFC 4122 compliant version 4 uuid in the form 2f6a8369-1897-48f1-afb8-6b3056bc72af
 ```
 
 ```javascript
 _.isUuid()
-// produces true|false. Validates a version 4 uuid
+// produces true|false. Validates an RFC 4122 compliant version 4 uuid
 ```
 
 ```javascript
