@@ -4,37 +4,31 @@ Some [lodash mixins](http://lodash.com/docs#mixin) I've collected - for node and
 
 # mixins
 
-## _.uuid
 ```javascript
 _.uuid()
 // produces a version 4 uuid in the form 2f6a8369-1897-48f1-afb8-6b3056bc72af
 ```
 
-## _.isUuid
 ```javascript
 _.isUuid()
 // produces true|false. Validates a version 4 uuid
 ```
 
-## _.format
 ```javascript
 _.format('Other {} are {}', 'people', 'good plumbers')
 // produces 'Other people are good plumbers'
 ```
 
-## _.formatPath
 ```javascript
 _.formatPath('/categ/:cat/:isbn', {cat: 'books', isbn: '034038204X'})
 // produces '/categ/books/034038204X'
 ```
 
-## _.immutableMerge
 ```javascript
 _.immutableMerge({a: 1}, {b: 2})
 // produces {a:1 , b:2} without mutating the input objects
 ```
 
-## _.ordinal
 ```javascript
 _.ordinal(142)
 // produces 'nd'
