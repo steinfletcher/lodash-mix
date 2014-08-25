@@ -10,7 +10,7 @@ _.uuid()
 ```
 
 ```javascript
-_.isUuid()
+_.isUuid('262182b1-f92c-42bd-ab39-8faedb47b4dc')
 // produces true|false. Validates an RFC 4122 compliant version 4 uuid
 ```
 
