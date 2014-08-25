@@ -10,6 +10,12 @@ _.uuid()
 // produces a version 4 uuid in the form 2f6a8369-1897-48f1-afb8-6b3056bc72af
 ```
 
+## _.isUuid
+```javascript
+_.isUuid()
+// produces true|false. Validates a version 4 uuid
+```
+
 ## _.format
 ```javascript
 _.format('Other {} are {}', 'people', 'good plumbers')
