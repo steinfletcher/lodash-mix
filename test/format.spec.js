@@ -15,6 +15,13 @@ test('format: should apply the parameters with filled markers', function (t) {
     t.equal(formatted, ('/categ/books/034038204X'));
 });
 
+test('format: should allow underscores in marker', function (t) {
+    t.plan(1);
+
+    var formatted = _.format('/categ/{my_id}', {my_id: 'books'});
+    t.equal(formatted, ('/categ/books'));
+});
+
 test('format: should handle template with multiple markers', function (t) {
     t.plan(1);
 
