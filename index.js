@@ -49,7 +49,7 @@
         extendWith.format = function (template, params) {
             var i = 1,
                 args = arguments;
-            return template.replace(/{[a-zA-Z0-9_]*}/g, function (match) {
+            return template.replace(/{[a-zA-Z_$]?[0-9a-zA-Z_$]*}/g, function (match) {
                 if (_.isObject(params)) {
                     var paramName = match.slice(1, match.length - 1);
                     var paramVal = params[paramName];
