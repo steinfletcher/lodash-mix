@@ -15,6 +15,13 @@ test('format: should apply the parameters with filled markers', function (t) {
     t.equal(formatted, ('/categ/books/034038204X'));
 });
 
+test('format: should handle template with multiple markers', function (t) {
+    t.plan(1);
+
+    var formatted = _.format('/categ/{cat}/{cat}', {cat: 'books'});
+    t.equal(formatted, ('/categ/books/books'));
+});
+
 test('format: should remove {} if the arguments are not defined', function (t) {
     t.plan(1);
 
