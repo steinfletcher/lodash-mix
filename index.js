@@ -24,6 +24,33 @@
         };
 
         /**
+         * _.replace
+         *
+         * Replaces the element with the new element if it exists (given the matcher)
+         * Inserts the element if the match fails
+         *
+         * Usage:
+         *    var base = [{id: 1, data: 2}, {id: 2, data: 3}, {id: 3, data: {nested: 4}}];
+         *    var matcher = {id: 3, data: {nested: 4}}
+         *    var newElement = {id: 3, data: 5}
+         *    _.replace(base, matcher, newElement);
+         * Produces:
+         *    [{id: 1, data: 5}, {id: 2, data: 3}, {id: 3, data: 5}]
+         *
+         * @param {Object} base - the base object to act upon
+         * @param {Object} match - the object to search for in base
+         * @param {Object} replacement - the object to replace the match
+         *    with if match is truthy, else push the object to base (which
+         *    increases the length by one)
+         * @returns {Object} the new replaced object
+         */
+        extendWith.replace = function (base, match, replacement) {
+            var removed = _.reject(base, match);
+            removed.push(replacement);
+            return removed;
+        };
+
+        /**
          * _.format
          *
          * Formats a string with given parameters.
