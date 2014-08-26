@@ -20,7 +20,7 @@ _.format('Other {} are {}', 'people', 'good plumbers')
 ```
 
 ```javascript
-_.formatPath('/categ/:cat/:isbn', {cat: 'books', isbn: '034038204X'})
+_.formatPath('/categ/{cat}/{isbn}', {cat: 'books', isbn: '034038204X'})
 // produces '/categ/books/034038204X'
 ```
 

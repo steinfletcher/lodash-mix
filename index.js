@@ -48,17 +48,17 @@
          *
          * Formats a path/url with given parameters.
          * Usage:
-         *    _.formatPath('/:categ/:id', {categ: 'books', isbn: '034038204X'})
+         *    _.formatPath('/{categ}/{isbn}', {categ: 'books', isbn: '034038204X'})
          * Produces:
-         *    '/categ/books/034038204X'
+         *    '/books/034038204X'
          *
          * @param {String} template - the url template to format
          * @param {Object} params - the replacement parameters
          * @returns {String} the formatted url
          */
         extendWith.formatPath = function (template, params) {
-            return template.replace(/:[a-zA-Z0-9]+/g, function (a, b) {
-                var paramName = a.slice(1, a.length);
+            return template.replace(/{[a-zA-Z0-9]+}/g, function (match) {
+                var paramName = match.slice(1, match.length - 1);
                 var paramVal = params[paramName];
                 return typeof paramVal !== 'undefined' ? paramVal : '';
             });
