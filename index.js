@@ -57,7 +57,7 @@
          * @returns {String} the formatted url
          */
         extendWith.formatPath = function (template, params) {
-            return template.replace(/:[a-z0-9]+/g, function (a, b) {
+            return template.replace(/:[a-zA-Z0-9]+/g, function (a, b) {
                 var paramName = a.slice(1, a.length);
                 var paramVal = params[paramName];
                 return typeof paramVal !== 'undefined' ? paramVal : '';
