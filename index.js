@@ -32,35 +32,31 @@
          * Produces:
          *    'Other people are good plumbers'
          *
-         * @param {String} template - the template to format
-         * @returns {String} the formatted string
-         */
-        extendWith.format = function (template) {
-            var i = 1,
-                args = arguments;
-            return template.replace(/{}/g, function () {
-                return typeof args[i] !== 'undefined' ? args[i++] : '';
-            });
-        };
-
-        /**
-         * _.formatPath
-         *
-         * Formats a path/url with given parameters.
          * Usage:
-         *    _.formatPath('/{categ}/{isbn}', {categ: 'books', isbn: '034038204X'})
+         *    _.format('/{categ}/{isbn}', 'books', '034038204X')
          * Produces:
          *    '/books/034038204X'
          *
-         * @param {String} template - the url template to format
+         * Usage:
+         *    _.format('/{categ}/{isbn}', {categ: 'books', isbn: '034038204X'})
+         * Produces:
+         *    '/books/034038204X'
+         *
+         * @param {String} template - the template to format
          * @param {Object} params - the replacement parameters
-         * @returns {String} the formatted url
+         * @returns {String} the formatted string
          */
-        extendWith.formatPath = function (template, params) {
-            return template.replace(/{[a-zA-Z0-9]+}/g, function (match) {
-                var paramName = match.slice(1, match.length - 1);
-                var paramVal = params[paramName];
-                return typeof paramVal !== 'undefined' ? paramVal : '';
+        extendWith.format = function (template, params) {
+            var i = 1,
+                args = arguments;
+            return template.replace(/{[a-zA-Z0-9]*}/g, function (match) {
+                if (_.isObject(params)) {
+                    var paramName = match.slice(1, match.length - 1);
+                    var paramVal = params[paramName];
+                    return typeof paramVal !== 'undefined' ? paramVal : '';
+                } else {
+                    return typeof args[i] !== 'undefined' ? args[i++] : '';
+                }
             });
         };
 
