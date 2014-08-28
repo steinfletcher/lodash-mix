@@ -40,7 +40,7 @@ _.immutableMerge({a: 1}, {b: 2})
 
 ### _.replace
 
-```
+```javascript
 var base = [{id: 1, data: 2}, {id: 2, data: 3}, {id: 3, data: {nested: 4}}];
 var matcher = {id: 3, data: {nested: 4}}
 var newElement = {id: 3, data: 5}
