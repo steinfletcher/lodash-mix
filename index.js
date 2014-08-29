@@ -24,7 +24,7 @@
         };
 
         /**
-         * _.replace
+         * _.upsert
          *
          * Replaces the element with the new element if it exists (given the matcher)
          * Inserts the element if the match fails
@@ -33,7 +33,7 @@
          *    var base = [{id: 1, data: 2}, {id: 2, data: 3}, {id: 3, data: {nested: 4}}];
          *    var matcher = {id: 3, data: {nested: 4}}
          *    var newElement = {id: 3, data: 5}
-         *    _.replace(base, matcher, newElement);
+         *    _.upsert(base, matcher, newElement);
          * Produces:
          *    [{id: 1, data: 5}, {id: 2, data: 3}, {id: 3, data: 5}]
          *
@@ -44,7 +44,7 @@
          *    increases the length by one)
          * @returns {Object} the new replaced object
          */
-        extendWith.replace = function (base, match, replacement) {
+        extendWith.upsert = function (base, match, replacement) {
             var removed = _.reject(base, match);
             removed.push(replacement);
             return removed;
