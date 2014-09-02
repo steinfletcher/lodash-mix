@@ -1,4 +1,15 @@
 (function () {
+    var isNode = typeof module !== 'undefined' &&
+            typeof module.exports !== 'undefined',
+        _;
+    if (isNode) {
+        _ = require('lodash');
+    }
+    else {
+        // browser environment
+        _ = window._;
+    }
+
     var mixins = (function () {
         var extendWith = {};
 
@@ -155,6 +166,31 @@
             return re.test(uuid);
         };
 
+        /**
+         * _.pluck
+         *
+         * Usage:
+         *    var base = [{p: {c: 1}}, {p: {c: 2}}]
+         *    _.pluck(base, 'p.c')
+         * Produces:
+         *    [1, 2]
+         *
+         * Adds nested property support to _.pluck (wraps _.pluck)
+         * @returns {Array} the plucked values
+         **/
+        extendWith.pluck = _.wrap(_.pluck, function(pluck, coll, propStr) {
+            if (_.contains(propStr, '.')) {
+                var props = propStr.split('.');
+                var elements = coll;
+                _.forEach(props, function (prop) {
+                    elements = pluck(elements, prop);
+                });
+                return elements;
+            } else {
+                return pluck(coll, propStr);
+            }
+        });
+
         return extendWith;
     })();
 
@@ -165,20 +201,14 @@
      * For node: this library will wrap lodash so there is no
      *    need to include lodash
      */
-
-    var _;
-    if (typeof module !== 'undefined' &&
-        typeof module.exports !== 'undefined') {
-        // node environment
-        _ = require('lodash');
-        _.mixin(mixins);
+    if (isNode) {
+        _.mixin(mixins, {'chain': true});
         module.exports = _;
     }
     else {
         // browser environment
-        _ = window._;
         if (typeof _ === 'function') {
-            _.mixin(mixins);
+            _.mixin(mixins, {'chain': true});
         }
         else {
             throw new Error('lodash must be included before lodash-extensions.');
