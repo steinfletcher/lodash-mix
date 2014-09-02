@@ -48,6 +48,17 @@ _.upsert(base, matcher, newElement);
 // produces [{id: 1, data: 5}, {id: 2, data: 3}, {id: 3, data: 5}]
 ```
 
+### _.pluck
+
+Extends _.pluck to enable extraction of nested properties
+
+```javascript
+Usage:
+   var base = [{p: {c: 1}}, {p: {c: 2}}]
+   _.pluck(base, 'p.c')
+// produces [1, 2]
+```
+
 ### _.ordinal
 
 ```javascript
