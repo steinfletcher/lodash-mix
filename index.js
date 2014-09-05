@@ -111,6 +111,7 @@
          * @returns {String} the ordinal suffix
          */
         extendWith.ordinal = function (number) {
+            number = Math.floor(number);
             var hundredRem = number % 100,
                 tenRem = number % 10;
             if (hundredRem - tenRem === 10) {
