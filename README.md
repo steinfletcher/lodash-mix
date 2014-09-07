@@ -53,8 +53,8 @@ _.upsert(base, matcher, newElement);
 Extends _.pluck to enable extraction of nested properties
 
 ```javascript
-   var base = [{p: {c: 1}}, {p: {c: 2}}]
-   _.pluck(base, 'p.c')
+var base = [{p: {c: 1}}, {p: {c: 2}}]
+_.pluck(base, 'p.c')
 // produces [1, 2]
 ```
 
