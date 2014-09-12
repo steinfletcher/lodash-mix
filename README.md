@@ -1,5 +1,7 @@
 # lodash-mix
 
+[![Build Status](https://travis-ci.org/steinfletcher/lodash-mix.svg?branch=master)](https://travis-ci.org/steinfletcher/lodash-mix)
+
 Some [lodash mixins](http://lodash.com/docs#mixin) I've collected - for node and the browser.
 
      npm install lodash-mix
