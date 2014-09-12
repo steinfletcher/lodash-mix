@@ -32,3 +32,17 @@ test('pluck: should extract values from a given nested property', function (t) {
     t.deepEqual(nestedProps, [1, 2, 3, 4]);
 });
 
+test('pluck: should extract values from a given nested property', function (t) {
+    t.plan(1);
+
+    var base = [
+        {a: 1, p: {c: {d: 4}}},
+        {b: 1, p: {c: {d: 1}}},
+        {c: 1, p: {c: {d: 44}}},
+        {d: 1, p: {c: 4}}
+    ];
+
+    var nestedProps = _.pluck(base, 'p.c.d');
+
+    t.deepEqual(nestedProps, [4, 1, 44, undefined]);
+});
