@@ -4,7 +4,7 @@
   "description": "Lodash mixins",
   "main": "index.js",
   "scripts": {
-    "test": "./test-runner.bash"
+    "test": "./node_modules/tape/bin/tape test/**/*.js"
   },
   "author": "Stein Fletcher",
   "license": "ISC",
