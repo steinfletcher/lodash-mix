@@ -62,6 +62,16 @@ _.pluck(base, 'p.c')
 // produces [1, 2]
 ```
 
+### _.compactObject
+
+```javascript
+_.compactObject({a: false, b: 4, c: {d: null}})
+// produces {b: 4, c: {d: null}} removing properties with falsy values
+
+_.compactObject({a: false, b: 4, c: '4'}, true)
+// produces {b: 4, c: {}} removing nested properties with falsy values
+
+```
 ### _.ordinal
 
 ```javascript

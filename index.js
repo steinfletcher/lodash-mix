@@ -192,6 +192,51 @@
             }
         });
 
+        /**
+         * _.compactObject
+         *
+         * Usage:
+         *    var obj = {a: false, b: 3, c: ''};
+         *    _.compactObject(obj)
+         * Produces:
+         *    {b: 3}
+         *
+         * Removes properties from an object where the value is falsy.
+         * Like _.compact but for objects
+         * @param {Object} obj - the object to remove falsy properties from
+         * @returns {Object} the object with falsy properties removed
+         **/
+        extendWith.compactObject = function(obj, isDeep) {
+            var clone = _.cloneDeep(obj);
+            if (isDeep) {
+                function traverse(o) {
+                    for (i in o) {
+                        if (_.isObject(o[i])) {
+                            traverse(o[i]);
+                        } else {
+                            if (_.isArray(o)) {
+                                if (!o.length) {
+                                    delete o;
+                                }
+                            } else {
+                                if (!o[i]) {
+                                    delete o[i];
+                                }
+                            }
+                        }
+                    }
+                }
+                traverse(clone);
+            } else {
+                _.each(clone, function(val, key) {
+                    if (!val) {
+                        delete clone[key];
+                    }
+                });
+            }
+            return clone;
+        };
+
         return extendWith;
     })();
 
