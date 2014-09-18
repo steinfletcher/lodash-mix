@@ -49,7 +49,7 @@ var base = [{id: 1, data: 2}, {id: 2, data: 3}, {id: 3, data: {nested: 4}}];
 var matcher = {id: 3, data: {nested: 4}}
 var newElement = {id: 3, data: 5}
 _.upsert(base, matcher, newElement);
-// produces [{id: 1, data: 5}, {id: 2, data: 3}, {id: 3, data: 5}]
+// produces [{id: 1, data: 2}, {id: 2, data: 3}, {id: 3, data: 5}]
 ```
 
 ### _.pluck
