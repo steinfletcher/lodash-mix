@@ -68,7 +68,7 @@ _.pluck(base, 'p.c')
 _.compactObject({a: false, b: 4, c: {d: null}})
 // produces {b: 4, c: {d: null}} removing properties with falsy values
 
-_.compactObject({a: false, b: 4, c: '4'}, true)
+_.compactObject({a: false, b: 4, c: {d: null}}, true)
 // produces {b: 4, c: {}} removing nested properties with falsy values
 
 ```
