@@ -5,6 +5,7 @@
 Some [lodash mixins](http://lodash.com/docs#mixin) I've collected - for node and the browser.
 
      npm install lodash-mix
+     bower install lodash-mix
 
 # mixins
 
