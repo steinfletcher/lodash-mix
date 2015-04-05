@@ -49,3 +49,10 @@ test('format: should remove {} if the arguments are not defined', function (t) {
     var formatted = _.format('/categ/{cat}/{isbn}', {isbn: '034038204X'});
     t.equal(formatted, '/categ//034038204X');
 });
+
+test('format: should preserver original string if no params provided', function (t) {
+    t.plan(1);
+
+    var formatted = _.format('message without params');
+    t.equal(formatted, 'message without params');
+});

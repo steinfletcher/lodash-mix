@@ -87,5 +87,6 @@ Tests run in node and the browser. Browserify and tape must be installed globall
 Execute from the command line
 
 ```bash
-npm test
+npm install -g tape
+tape test/**/*.js
 ```
