@@ -3,7 +3,7 @@
             typeof module.exports !== 'undefined',
         _;
     if (isNode) {
-        _ = require('lodash');
+        _ = require('lodash').runInContext();
     }
     else {
         // browser environment
