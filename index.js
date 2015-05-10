@@ -168,31 +168,6 @@
         };
 
         /**
-         * _.pluck
-         *
-         * Usage:
-         *    var base = [{p: {c: 1}}, {p: {c: 2}}]
-         *    _.pluck(base, 'p.c')
-         * Produces:
-         *    [1, 2]
-         *
-         * Adds nested property support to _.pluck (wraps _.pluck)
-         * @returns {Array} the plucked values
-         **/
-        extendWith.pluck = _.wrap(_.pluck, function(pluck, coll, propStr) {
-            if (_.contains(propStr, '.')) {
-                var props = propStr.split('.');
-                var elements = coll;
-                _.forEach(props, function (prop) {
-                    elements = pluck(elements, prop);
-                });
-                return elements;
-            } else {
-                return pluck(coll, propStr);
-            }
-        });
-
-        /**
          * _.compactObject
          *
          * Usage:
