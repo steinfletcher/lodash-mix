@@ -9,6 +9,8 @@ Some [lodash mixins](http://lodash.com/docs#mixin) I've collected - for node and
      npm install lodash-mix
      bower install lodash-mix
 
+To use in the browser, include lodash before including this library.
+
 # mixins
 
 ### _.format
