@@ -1,6 +1,8 @@
 # lodash-mix
 
 [![Build Status](https://travis-ci.org/tapatron/lodash-mix.svg?branch=master)](https://travis-ci.org/tapatron/lodash-mix)
+[![npm version](https://badge.fury.io/js/lodash-mix.svg)](http://badge.fury.io/js/lodash-mix)
+
 
 Some [lodash mixins](http://lodash.com/docs#mixin) I've collected - for node and the browser.
 
