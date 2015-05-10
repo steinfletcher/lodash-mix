@@ -12,10 +12,10 @@
     "type": "git",
     "url": "https://github.com/steinfletcher/lodash-mix"
   },
-  "dependencies": {
-    "lodash": "^2.4.1"
-  },
   "devDependencies": {
     "tape": "^2.14.0"
+  },
+  "dependencies": {
+    "lodash": "^3.8.0"
   }
 }
