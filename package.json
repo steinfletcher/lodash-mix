@@ -1,6 +1,6 @@
 {
   "name": "lodash-mix",
-  "version": "0.0.2",
+  "version": "0.0.7",
   "description": "Lodash mixins",
   "main": "index.js",
   "scripts": {
