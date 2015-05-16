@@ -117,7 +117,7 @@
             if (hundredRem - tenRem === 10) {
                 return 'th';
             }
-            switch(tenRem) {
+            switch (tenRem) {
                 case 1:
                     return 'st';
                 case 2:
@@ -138,15 +138,15 @@
          *    '9716498c-45df-47d2-8099-3f678446d776'
          *
          * Generates an RFC 4122 version 4 uuid
+         * @see http://stackoverflow.com/a/8809472
          * @returns {String} the generated uuid
          */
-        extendWith.uuid = function() {
-            return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'
-                .replace(/[xy]/g, function(match) {
-                    var value = match === 'x'
-                                ? _.random(0, 15)
-                                : _.random(8, 11);
-                    return value.toString(16);
+        extendWith.uuid = function () {
+            var d = new Date().getTime();
+            return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function (c) {
+                var r = (d + Math.random() * 16) % 16 | 0;
+                d = Math.floor(d / 16);
+                return (c == 'x' ? r : (r & 0x3 | 0x8)).toString(16);
             });
         };
 
@@ -162,7 +162,7 @@
          * @param {String} uuid - the uuid under test
          * @returns {Boolean} true if the uuid under test is a valid uuid
          **/
-        extendWith.isUuid = function(uuid) {
+        extendWith.isUuid = function (uuid) {
             var re = /^[0-9a-f]{8}-[0-9a-f]{4}-4[0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$/i;
             return re.test(uuid);
         };
@@ -179,7 +179,7 @@
          * Adds nested property support to _.pluck (wraps _.pluck)
          * @returns {Array} the plucked values
          **/
-        extendWith.pluck = _.wrap(_.pluck, function(pluck, coll, propStr) {
+        extendWith.pluck = _.wrap(_.pluck, function (pluck, coll, propStr) {
             if (_.contains(propStr, '.')) {
                 var props = propStr.split('.');
                 var elements = coll;
@@ -206,7 +206,7 @@
          * @param {Object} obj - the object to remove falsy properties from
          * @returns {Object} the object with falsy properties removed
          **/
-        extendWith.compactObject = function(obj, isDeep) {
+        extendWith.compactObject = function (obj, isDeep) {
             var clone = _.cloneDeep(obj);
             if (isDeep) {
                 function traverse(o) {
@@ -226,9 +226,10 @@
                         }
                     }
                 }
+
                 traverse(clone);
             } else {
-                _.each(clone, function(val, key) {
+                _.each(clone, function (val, key) {
                     if (!val) {
                         delete clone[key];
                     }
