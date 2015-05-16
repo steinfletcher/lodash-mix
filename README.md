@@ -40,6 +40,13 @@ _.isUuid('262182b1-f92c-42bd-ab39-8faedb47b4dc')
 // produces true|false. Validates an RFC 4122 compliant version 4 uuid
 ```
 
+### _.titleCase
+
+```javascript
+_.titleCase("silence: lectures and writings")
+// produces "Silence: Lectures and Writings"
+```
+
 ### _.immutableMerge
 
 ```javascript
