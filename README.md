@@ -3,13 +3,11 @@
 [![Build Status](https://travis-ci.org/tapatron/lodash-mix.svg?branch=master)](https://travis-ci.org/tapatron/lodash-mix)
 [![npm version](https://badge.fury.io/js/lodash-mix.svg)](http://badge.fury.io/js/lodash-mix)
 
+This isn't really maintained. Feel free to use this as a basis for your own mixins or contribute additions.
 
-Some [lodash mixins](http://lodash.com/docs#mixin) I've collected - for node and the browser.
+[lodash mixins](http://lodash.com/docs#mixin) I've collected - for node and the browser.
 
-     npm install lodash-mix
-     bower install lodash-mix
-
-To use in the browser, include lodash before including this library. Feel free to use this as a basis for your own mixins or contribute additions.
+To use in the browser, include lodash before including this library. 
 
 # mixins
 
