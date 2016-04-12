@@ -3,7 +3,7 @@
 [![Build Status](https://travis-ci.org/tapatron/lodash-mix.svg?branch=master)](https://travis-ci.org/tapatron/lodash-mix)
 [![npm version](https://badge.fury.io/js/lodash-mix.svg)](http://badge.fury.io/js/lodash-mix)
 
-This isn't really maintained. Feel free to use this as a basis for your own mixins or contribute additions.
+This isn't really maintained, but feel free to use this as a basis for your own mixins or contribute additions.
 
 [lodash mixins](http://lodash.com/docs#mixin) I've collected - for node and the browser.
 
